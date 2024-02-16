@@ -1,39 +1,36 @@
-function hideElementById(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.add('hidden');
+
+alfabateButtons.addEventListener('click', function () {
+    sectionHidden('alfabate-section');
+    sectionOpen('keyboard-section');
+    gameTime();
+
+})
+
+// loveButton.addEventListener('click', function(){
+//    const button = loveAndDolarButton('love-button');
+//     incrementDis.innerText = button;
+// })
+
+function gameTime() {
+    const randomLetter = randomNumber();
+    gamedispay.innerHTML = randomLetter;
+    secColorKyeButton(randomLetter);
 }
 
-function showElementById(elementId){
-    const element =  document.getElementById(elementId);
-    element.classList.remove('hidden');
+document.getElementById('final-score-button').addEventListener('click', function () {
 
-}
+    sectionOpen('keyboard-section');
+    sectionHidden('final-score');
+    gameTime();
+    incrementDis.innerText = 0;
+    lifeDisplay.innerText = 5;
 
+  
 
-function setBackgroundColorById(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.add('bg-orange-400');
+    // const incrementNumbers = incrementDis.innerText;
+    // const incrementIntagers = parseInt(incrementNumbers);
+    // const newset = incrementIntagers + 0;
+    // lifeDisplay.innerText = newset;
+    // keyboardButtons();
 
-}
-
-function removeBackgroundColorById(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.remove('bg-orange-400');
-}
-
-
-function getRandomAlphabet(){
-    const alphabetString =  'abcdefghijklmnopqrstuvwxyz';
-    const alphabets = alphabetString.split('');
-    // console.log('your random alphabet', alphabets);
-
-
-    // get a random index between 0-25
-    const randomNumber = Math.random() * 25;
-    const index = Math.round(randomNumber);
-
-    const alphabet = alphabets [index];
-    // console.log(index, alphabet);
-    return alphabet;
-
-}
+})
